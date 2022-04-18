@@ -1,5 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import fileUploadImage from "./assets/image.svg";
+  import circleCheck from "./assets/circle-check.svg";
 
   let state = "beforeUpload";
   let url = "https://arayra-image-uploader.herokuapp.com/";
@@ -58,7 +60,7 @@
         on:drop|preventDefault={retrievingImage}
         on:dragover|preventDefault
       >
-        <img src="../src/assets/image.svg" alt="Drag & Drop SVG" />
+        <img src={fileUploadImage} alt="Drag & Drop SVG" />
         <span class="text-inside">Drag & Drop your image here</span>
       </div>
       <span class="text-outside extra-margin">Or</span>
@@ -82,7 +84,7 @@
     {#if state === "afterUpload"}
       <img
         class="circle-check extra-margin"
-        src="../src/assets/circle-check.svg"
+        src={circleCheck}
         alt="Circle Check SVG"
       />
       <h1 class="extra-margin">Uploaded Successfully!</h1>
